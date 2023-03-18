@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> <!--links to font--> 
+        <link rel="stylesheet" href="JCH.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <title>JakubCutsHair</title>
+    </head>
+    <body>
+        <div id="home"></div>
+        
+        <div class="container">
+            
+            <div class="background"></div>
+            
+            <div class="navbar" id="Navbar">
+
+                <a class="logo"><span>BarberJakub</span></a>
+                
+                <a class="btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+
+                <div class="menu">
+                    <a href="" class="nvbr_btn"><span>Contact</span></a>
+                    <a href="#Showcase" class="nvbr_btn"><span>Pictures</span></a>
+                    <a href="#aboutus" class="nvbr_btn"><span>About</span></a>
+                    <a href="#home" class="nvbr_btn"><span>Home</span></a>
+                </div>
+            </div>
+            
+            <div class="art">
+                
+                <div class="gif">
+                    <img src="images/background_image" alt="">
+                    <h2>Barber Services Zlín a Okolí</h2>
+                </div>
+                <div class="art_aboutus" id="aboutus"> <!--aka the background for about us page-->
+                    <div class="art_text"> 
+                        <div class="text_img">
+                            <img src="images/Barber.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <h2>Kdo jsem</h2>
+                            <p>Na začátek bych se chtěl představit. Jmenuji se Jakub Klímek. Jsem barber, který se zajímá se o stříhání nejvíc fresh haircutů.
+                            Stříhal jsem již mnoho zákazníků. Začátky byly těžké, ale teď, když už mám zkušenosti z mnoha stříhání, tak to jede mnohem lépe a lépe.
+                            K dnešnímu dni je, když jdu někoho stříhat, tak je 99% zákazníků spokojeno se sestřihem, který ode mě mají. Stříhám hlavně na intru, ale jezdím taky za zákazníky po celém Zlíně a okolí.
+                            Pokud chcete požehnat s fresh a čistým sestřihem, nebojte se mě kontaktovat na Instagramu nebo na e-mailu, který bude uveden na této stránce.</p>
+                        </div>   
+                    </div>
+                </div>
+                <div class="art_img" id="Showcase">
+                    <div class="showcase_text">
+                        <h1>Ukázka mojí práce</h1>
+                    </div>
+                    <div class="image_container">
+                        <div class="image"><img src="images/idk_lol.jpg"></div>
+                        <div class="image"><img src="images/Barber.jpg"></div>
+                        <div class="image"><img src="images/Showcase_1.0.jpg"></div>
+                        <div class="image"><img src="images/Showcase_1.1.jpg"></div>
+                        <div class="image"><img src="images/Showcase_2.jpg"></div>
+                        <div class="image"><img src="images/Showcase_3.jpg"></div>
+                    </div>
+            
+                    <div class="popup-image">
+                        <span>&times;</span>
+                        <img src="images/chicken.webp" alt="">
+                    </div>
+                
+                </div>
+                <div class="footer">
+                    <a class="instagram_link" href="https://www.instagram.com/barberjakub/" target="_blank">
+                        <img src="images/logo-instagram.svg" alt="">
+                    </a> 
+                    <div class="email_stuff">
+                        <p>Gmail: <span id="email">barberfromczechia@gmail.com</span></p>
+                        <button type="button" class="email_copy" onclick="copy('#email')">Kopírovat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script type="text/javascript">
+
+            $(".btn").on("click",function(){
+              $('.menu').toggleClass("show");
+            });
+
+            function copy(element){
+                var $temp = $("<input>");
+                $("body").append($temp);
+                $temp.val($(element).text()).select();
+                document.execCommand("copy");
+                $temp.remove();
+            }
+        </script>
+        <script>
+            document.querySelectorAll('.image_container img').forEach(image =>{
+                image.onclick = () =>{
+                    document.querySelector('.popup-image').style.display = "block";
+                    document.querySelector('.popup-image img').src = image.getAttribute('src');
+                }
+            });
+            document.querySelector('.popup-image span').onclick = () =>{
+                document.querySelector('.popup-image').style.display = "none";
+
+            }
+        
+        </script>
+
+        <script type="text/javascript">
+
+            $(".btn").on("click",function(){
+              $('.menu').toggleClass("show");
+            });
+        </script>
+
+    
+    </body>
+</html>
